@@ -8,9 +8,21 @@ pipeline {
     }
 
     stage('bash') {
-      steps {
-        sh '''ls -la
+      parallel {
+        stage('bash') {
+          steps {
+            sh '''ls -la
 pwd'''
+          }
+        }
+
+        stage('bash2') {
+          steps {
+            sh '''cont="hello world!"
+echo ${cont}'''
+          }
+        }
+
       }
     }
 
