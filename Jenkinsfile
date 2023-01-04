@@ -9,7 +9,8 @@ pipeline {
 
     stage('bash') {
       steps {
-        sh 'ls -la'
+        sh '''ls -la
+pwd'''
       }
     }
 
