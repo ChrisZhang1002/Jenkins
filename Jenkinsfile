@@ -25,7 +25,7 @@ echo ${cont}'''
 
         stage('docker run busybox') {
           steps {
-            sh '''docker pull busybox && docker run busybox
+            sh '''sudo -u root docker pull busybox 
 '''
           }
         }
